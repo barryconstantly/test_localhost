@@ -1,0 +1,10 @@
+---
+- name: Simple Test of localhost shell operations
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: Ansible delete file wildcard example
+    when:
+      - "'Tower' in group_names"
+    shell: rm -rf /tmp/*.log
